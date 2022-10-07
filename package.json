@@ -1,0 +1,32 @@
+{
+  "name": "y",
+  "version": "1.0.0",
+  "description": "learning javascrit project",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlexisMarc/javascript.git"
+  },
+  "keywords": [
+    "arreglos",
+    "funciones",
+    "objetos"
+  ],
+  "author": "Marcos Rincón",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/AlexisMarc/javascript/issues"
+  },
+  "homepage": "https://github.com/AlexisMarc/javascript#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  },
+  "dependencies": {
+    "colors": "^1.4.0"
+  }
+}
