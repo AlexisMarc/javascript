@@ -24,7 +24,6 @@ router.put('/:id', (require, response)=>{
     })
 })
 
-
 router.delete('/:id', (require, response)=>{
     response.status(200).json({
         "message":`Hola putos le id es ${require.params.id}`

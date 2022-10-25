@@ -2,47 +2,23 @@ const express = require('express')
 const detenv = require('dotenv')
 const colors = require('colors')
 
+const connectDB = require('./config/db')
 
 detenv.config({
     path: './config_env/config.env'
 })
+
+const BootcampRoutes = require('./routes/BootcampRouter')
+const UserRouter = require('./routes/UserRouter')
 //1 crear el objeto app
 const app = express()
 
+connectDB()
+
 //2 crear una ruta de prueba
 
-const bootscampRoutes = require('./routes/BootcampRouter')
-
-
-app.get('/api/v1/bootscamps', (require, response )=>{
-    response.status(200).json({
-        "menssage": "Hola putos"
-    })
-})
-
-app.get('/api/v1/bootscamps/:id', (require, response )=>{
-    response.status(200).json({
-        "menssage": `Hola putos le id es ${require.params.id}`
-    })
-})
-
-app.post('/api/v1/bootscamps', (require, response)=>{
-    response.status(201).json({
-        "message":"aqui va el bootscamp"
-    })
-})
-app.put('/api/v1/bootscamps/:id', (require, response)=>{
-    response.status(200).json({
-        "message":`Hola putos le id es ${require.params.id}`
-    })
-})
-
-app.delete('/api/v1/bootscamps/:id', (require, response)=>{
-    response.status(200).json({
-        "message":`Hola putos le id es ${require.params.id}`
-    })
-})
-
+app.use('/api/v1/bootcamps' , BootcampRoutes)
+app.use('/api/v1/user' , UserRouter)
 //3 ejecular servidor de desarrollo de express
 app.listen(process.env.PORT, () =>{
     console.log(`Servidor iniciado `)
