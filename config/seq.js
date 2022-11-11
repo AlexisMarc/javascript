@@ -1,14 +1,20 @@
 const Sequelize = require('sequelize')
 
+const dotenv = require('dotenv')
+
+dotenv.config({
+    path: './config_env/config.env'
+})
+
 //definir porfavor objeto sequelize de conexión:
 const sequelize = new Sequelize(
-    'ficha_2465880',
-    'root',
-    '',
+    process.env.DB_NAME,
+    process.env.DB_USER,
+    process.env.DB_PASSWORD,
     {
-        host:'localhost',
-        dialect: 'mysql',
-        port:'3307'
+        host: process.env.DB_HOST,
+        dialect: process.env.DB_MOTOR,
+        port: process.env.DB_PORT
     }
 )
 

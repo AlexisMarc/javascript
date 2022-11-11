@@ -1,10 +1,5 @@
 const sequelize = require('./seq')
-const UserModel = require('../models/user')
-const { DataTypes } = require('sequelize')
-const user = require('../models/user')
 const colors = require('colors')
-
-const User = UserModel(sequelize, DataTypes)
 
 
 const connectDB = async () => {
